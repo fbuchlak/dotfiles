@@ -1,0 +1,23 @@
+[submodule ".submodules/dmenu"]
+	path = .submodules/dmenu
+	url = https://github.com/fbuchlak/dmenu
+	branch = main
+[submodule ".submodules/dwm"]
+	path = .submodules/dwm
+	url = https://github.com/fbuchlak/dwm
+	branch = main
+[submodule ".submodules/dwmblocks-async"]
+	path = .submodules/dwmblocks-async
+	url = https://github.com/fbuchlak/dwmblocks-async
+	branch = main
+[submodule ".submodules/slock"]
+	path = .submodules/slock
+	url = https://github.com/fbuchlak/slock
+	branch = main
+[submodule ".submodules/st"]
+	path = .submodules/st
+	url = https://github.com/fbuchlak/st
+	branch = main
+[submodule ".submodules/external/picom"]
+	path = .submodules/external/picom
+	url = https://github.com/pijulius/picom
