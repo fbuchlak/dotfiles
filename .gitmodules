@@ -18,6 +18,3 @@
 	path = .submodules/st
 	url = https://github.com/fbuchlak/st
 	branch = main
-[submodule ".submodules/external/picom"]
-	path = .submodules/external/picom
-	url = https://github.com/pijulius/picom
