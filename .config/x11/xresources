@@ -1,0 +1,73 @@
+! Normal      Bright
+! --------    -------
+! 0 Black      8 Black
+! 1 Red        9 Red
+! 2 Yellow    10 Yellow
+! 3 Green     11 Green
+! 4 Blue      12 Blue
+! 5 Magenta   13 Magenta
+! 6 Cyan      14 Cyan
+! 7 White     15 White
+
+#define c00 #15161e
+#define c01 #f7768e
+#define c02 #9ece6a
+#define c03 #e0af68
+#define c04 #7aa2f7
+#define c05 #bb9af7
+#define c06 #7dcfff
+#define c07 #a9b1d6
+#define c08 #414868
+#define c09 #f7768e
+#define c10 #9ece6a
+#define c11 #e0af68
+#define c12 #7aa2f7
+#define c13 #bb9af7
+#define c14 #7dcfff
+#define c15 #c0caf5
+
+*.color0:	c00
+*.color1:	c01
+*.color2:	c02
+*.color3:	c03
+*.color4:	c04
+*.color5:	c05
+*.color6:	c06
+*.color7:	c07
+*.color8:	c08
+*.color9:	c09
+*.color10:	c10
+*.color11:	c11
+*.color12:	c12
+*.color13:	c13
+*.color14:	c14
+*.color15:	c15
+
+*foreground: c07
+*background: c08
+*cursorColor: c07
+*borderColor: c08
+
+dwm.bgColor: c00
+dwm.boColor: c00
+dwm.fgColor: c07
+dwm.bgColorActive: c07
+dwm.boColorActive: c07
+dwm.fgColorActive: c00
+*.alpha: 0.75
+*.font: monospace::size=15
+
+dwm.font: monospace:size=13
+dwm.dmenuFont: monospace:size=13
+dwm.borderpx: 6
+dwm.gappih: 15
+dwm.gappiv: 15
+dwm.gappoh: 15
+dwm.gappov: 15
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

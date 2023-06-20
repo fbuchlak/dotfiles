@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=nnn
+Exec=st -e nnn %u

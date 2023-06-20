@@ -1,0 +1,10 @@
+[Default Applications]
+
+application/pdf=pdf.desktop
+application/postscript=pdf.desktop;
+image/gif=img.desktop;
+image/jpeg=img.desktop;
+image/png=img.desktop;
+inode/directory=file.desktop;
+text/plain=text.desktop;
+text/x-shellscript=text.desktop;
