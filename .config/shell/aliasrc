@@ -4,6 +4,7 @@
 [ -d "$HOME/.dotgit" ] && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME'
 
 # use colors
+alias cal="cal -m --color=always"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ls="ls -hN --color=auto"
