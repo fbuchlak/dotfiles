@@ -18,3 +18,7 @@
 	path = .submodules/st
 	url = https://github.com/fbuchlak/st
 	branch = main
+[submodule ".local/share/statusbar-blocks"]
+	path = .local/share/statusbar-blocks
+	url = https://github.com/fbuchlak/statusbar-blocks
+	branch = main
