@@ -9,22 +9,25 @@
 ! 6 Cyan      14 Cyan
 ! 7 White     15 White
 
-#define c00 #15161e
-#define c01 #f7768e
-#define c02 #9ece6a
-#define c03 #e0af68
-#define c04 #7aa2f7
-#define c05 #bb9af7
-#define c06 #7dcfff
-#define c07 #a9b1d6
-#define c08 #414868
-#define c09 #f7768e
-#define c10 #9ece6a
-#define c11 #e0af68
-#define c12 #7aa2f7
-#define c13 #bb9af7
-#define c14 #7dcfff
-#define c15 #c0caf5
+#define cFG #CAD3F5
+#define cBG #24273A
+
+#define c00 #494D64
+#define c01 #ED8796
+#define c02 #A6DA95
+#define c03 #EED49F
+#define c04 #8AADF4
+#define c05 #F5BDE6
+#define c06 #8BD5CA
+#define c07 #B8C0E0
+#define c08 #5B6078
+#define c09 #ED8796
+#define c10 #A6DA95
+#define c11 #EED49F
+#define c12 #8AADF4
+#define c13 #F5BDE6
+#define c14 #8BD5CA
+#define c15 #A5ADCB
 
 *.color0:	c00
 *.color1:	c01
@@ -43,27 +46,28 @@
 *.color14:	c14
 *.color15:	c15
 
-*foreground: c07
-*background: c08
+*foreground: cFG
+*background: cBG
 *cursorColor: c07
 *borderColor: c08
 
-dwm.bgColor: c00
-dwm.boColor: c00
-dwm.fgColor: c07
-dwm.bgColorActive: c07
-dwm.boColorActive: c07
-dwm.fgColorActive: c00
-*.alpha: 0.75
-*.font: monospace::size=15
+*.alpha: .6
+*.font: monospace::size=16
 
-dwm.font: monospace:size=13
-dwm.dmenuFont: monospace:size=13
-dwm.borderpx: 6
-dwm.gappih: 15
-dwm.gappiv: 15
-dwm.gappoh: 15
-dwm.gappov: 15
+dwm.bgColor: cBG
+dwm.boColor: cBG
+dwm.fgColor: cFG
+dwm.bgColorActive: c04
+dwm.boColorActive: c04
+dwm.fgColorActive: cBG
+
+dwm.font: monospace:size=14
+dwm.dmenuFont: monospace:size=14
+dwm.borderpx: 4
+dwm.gappih: 8
+dwm.gappiv: 8
+dwm.gappoh: 8
+dwm.gappov: 8
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
