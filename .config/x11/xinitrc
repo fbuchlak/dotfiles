@@ -20,6 +20,7 @@ xresources=${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources
 [[ -f ${xresources} ]] && xrdb -merge ${xresources}
 
 runcmds "setwallpaper dwmblocks dunst unclutter xcompmgr"
+runcmd "pulseaudio -d"
 
 pidof -sx dwm > /dev/null || dwm
 

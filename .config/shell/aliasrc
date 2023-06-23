@@ -16,8 +16,6 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -Iv"
 
-alias emerge="emerge --ask"
-
 # custom
 alias hg="history 1 -1 | rg"
 alias ll="ls -alF"
@@ -34,7 +32,7 @@ if [ -v EDITOR ]; then
 fi
 
 # sudo
-for cmd in emerge emaint mount unmount powerof reboot shutdown su ; do
-	alias $cmd="sudo $cmd"
+for cmd in emaint emerge eselect mount unmount poweroff reboot shutdown su ; do
+	alias $cmd="sudo $cmd "
 done; unset cmd;
 
