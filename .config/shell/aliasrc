@@ -1,5 +1,7 @@
 #!/bin/sh
 
+alias sudo="sudo " # allow alias for sudo
+
 # dotfiles
 [ -d "$HOME/.dotgit" ] && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME'
 
@@ -9,10 +11,12 @@ alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ls="ls -hN --color=auto"
 
-# verbosity
+# default flags
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -Iv"
+
+alias emerge="emerge --ask"
 
 # custom
 alias hg="history 1 -1 | rg"

@@ -5,7 +5,7 @@ export EDITOR="vi"
 export BROWSER="librewolf"
 
 # Custom scripts
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/statusbar-blocks/bin"
 
 # Home
 export XDG_CACHE_HOME=${HOME}/.cache
