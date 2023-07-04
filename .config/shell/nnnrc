@@ -1,0 +1,41 @@
+#!/bin/sh
+
+BLK="03"
+CHR="03"
+DIR="04"
+EXE="02"
+REG="07"
+HARDLINK="05"
+SYMLINK="05"
+MISSING="08"
+ORPHAN="01"
+FIFO="06"
+SOCK="03"
+UNKNOWN="01"
+
+export NNN_OPTS="AdoHi"
+export NNN_COLORS="#04020301;4231"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$UNKNOWN"
+
+PLUGS_CMD='x:!chmod +x "$nnn";c:!cp -rv "$nnn" "$nnn".cp'
+PLUGS="o:fzopen;d:diffs"
+
+export NNN_PLUG="$PLUGS;$PLUGS_CMD"
+
+n ()
+{
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    command nnn "$@"
+
+    [ ! -f "$NNN_TMPFILE" ] || {
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
+    }
+}
+

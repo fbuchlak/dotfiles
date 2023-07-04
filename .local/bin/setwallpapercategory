@@ -1,0 +1,14 @@
+#!/bin/bash
+
+randomimg=$(
+find $XDG_DATA_HOME/wallpapers/categories/$1 -type f |
+	file --mime-type -f - |
+	grep -F image/ |
+	sort -R |
+	head -n 1 |
+	rev |
+	cut -d : -f 2- |
+	rev
+)
+
+xwallpaper --zoom "$randomimg" || true

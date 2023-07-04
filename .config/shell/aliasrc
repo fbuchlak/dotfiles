@@ -1,9 +1,11 @@
 #!/bin/sh
 
+unalias -a
+
 alias sudo="sudo " # allow alias for sudo
 
 # dotfiles
-[ -d "$HOME/.dotgit" ] && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME'
+[ -d "$HOME/.dotgit" ] && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME' && alias d="dotgit "
 
 # use colors
 alias cal="cal -m --color=always"
@@ -15,11 +17,27 @@ alias ls="ls -hN --color=auto"
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -Iv"
+alias df="df -h"
+alias free="free -h"
+
+# replace
+alias top="htop"
 
 # custom
 alias hg="history 1 -1 | rg"
-alias ll="ls -alF"
+alias ll="ls -alF --group-directories-first"
 alias mkd="mkdir -pv"
+
+# shortcuts
+alias z="zathura"
+
+# lynx
+[ -d ${XDG_CONFIG_HOME}/lynx ] && \
+    alias lynx="lynx -cfg=${XDG_CONFIG_HOME}/lynx/lynx.cfg -lss=${XDG_CONFIG_HOME}/lynx/lynx.lss"
+alias "?"="search-with-lynx "
+alias "?b"="search-with-lynx bind "
+alias "?d"="search-with-lynx duck "
+alias "?g"="search-with-lynx google "
 
 # editor
 [ -x "$(command -v ed)" ] && alias ed="vi"
@@ -32,7 +50,9 @@ if [ -v EDITOR ]; then
 fi
 
 # sudo
-for cmd in emaint emerge eselect mount unmount poweroff reboot shutdown su ; do
+for cmd in emaint emerge eselect mount umount poweroff reboot shutdown showkey su ; do
 	alias $cmd="sudo $cmd "
 done; unset cmd;
+
+alias emerge="sudo emerge --ask"
 

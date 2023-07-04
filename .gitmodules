@@ -22,3 +22,7 @@
 	path = .local/bin/statusbar-blocks
 	url = https://github.com/fbuchlak/statusbar-blocks
 	branch = main
+[submodule ".submodules/tabbed"]
+	path = .submodules/tabbed
+	url = https://github.com/fbuchlak/tabbed.git
+	branch = main

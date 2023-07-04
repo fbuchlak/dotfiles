@@ -29,22 +29,22 @@
 #define c14 #8BD5CA
 #define c15 #A5ADCB
 
-*.color0:	c00
-*.color1:	c01
-*.color2:	c02
-*.color3:	c03
-*.color4:	c04
-*.color5:	c05
-*.color6:	c06
-*.color7:	c07
-*.color8:	c08
-*.color9:	c09
-*.color10:	c10
-*.color11:	c11
-*.color12:	c12
-*.color13:	c13
-*.color14:	c14
-*.color15:	c15
+*.color0: c00
+*.color1: c01
+*.color2: c02
+*.color3: c03
+*.color4: c04
+*.color5: c05
+*.color6: c06
+*.color7: c07
+*.color8: c08
+*.color9: c09
+*.color10: c10
+*.color11: c11
+*.color12: c12
+*.color13: c13
+*.color14: c14
+*.color15: c15
 
 *foreground: cFG
 *background: cBG
@@ -52,7 +52,7 @@
 *borderColor: c08
 
 *.alpha: .6
-*.font: monospace::size=16
+*.font: JetBrainsMono\ Nerd\ Font:size=16
 
 dwm.bgColor: cBG
 dwm.boColor: cBG
@@ -61,8 +61,8 @@ dwm.bgColorActive: c04
 dwm.boColorActive: c04
 dwm.fgColorActive: cBG
 
-dwm.font: monospace:size=14
-dwm.dmenuFont: monospace:size=14
+dwm.font: JetBrainsMono\ Nerd\ Font:size=14
+dwm.dmenuFont: JetBrainsMono\ Nerd\ Font:size=14
 dwm.borderpx: 4
 dwm.gappih: 8
 dwm.gappiv: 8

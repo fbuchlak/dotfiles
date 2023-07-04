@@ -1,0 +1,44 @@
+map [normal] i recolor
+map [fullscreen] i recolor
+map [presentation] i recolor
+
+map [normal] F toggle_fullscreen
+map [fullscreen] F toggle_fullscreen
+map [normal] P toggle_presentation
+map [presentation] P toggle_presentation
+
+map [normal] u scroll half-up
+map [normal] d scroll half-down
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+
+map [normal] J zoom out
+map [normal] K zoom in
+map [fullscreen] J zoom out
+map [fullscreen] K zoom in
+
+map [presentation] h navigate previous
+map [presentation] j navigate next
+map [presentation] k navigate previous
+map [presentation] ; navigate next
+
+set completion-bg                  "#EED49F" # c03
+set completion-fg                  "#8AADF4" # c04
+set completion-highlight-bg        "#EED49F" # c03
+set completion-highlight-fg        "#8AADF4" # c04
+set default-bg                     "#24273A" # cBG
+set default-fg                     "#CAD3F5" # cFG
+set highlight-active-color         "#8AADF4" # c04
+set highlight-color                "#EED49F" # c03
+set inputbar-bg                    "#24273A" # cBG
+set inputbar-fg                    "#CAD3F5" # cFG
+set notification-bg                "#24273A" # cBG
+set notification-error-bg          "#24273A" # cBG
+set notification-error-fg          "#CAD3F5" # cFG
+set notification-fg                "#CAD3F5" # cFG
+set notification-warning-bg        "#24273A" # cBG
+set notification-warning-fg        "#CAD3F5" # cFG
+set recolor-darkcolor              "#CAD3F5" # cFG
+set recolor-lightcolor             "#24273A" # cBG
+set statusbar-bg                   "#24273A" # cBG
+set statusbar-fg                   "#CAD3F5" # cFG

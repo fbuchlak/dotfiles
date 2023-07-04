@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CMD="lynx -cfg=${XDG_CONFIG_HOME}/lynx/lynx.cfg -lss=${XDG_CONFIG_HOME}/lynx/lynx.lss"
+URL="https://lite.duckduckgo.com/lite?q="
+
+case "$1" in
+    "b"|"bing") shift ; URL="https://www.bing.com/search?q=" ;;
+    "d"|"duck") shift ;;
+    "g"|"google") shift ; URL="https://www.google.com/search?q=" ;;
+esac
+
+QUERY=$(jq -rn --arg x "$*" '$x|@uri')
+
+$CMD $URL$QUERY

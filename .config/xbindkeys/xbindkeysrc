@@ -1,0 +1,11 @@
+"amixer -q sset Master 10%+; pkill -RTMIN+11 dwmblocks; pkill -RTMIN+12 dwmblocks; pkill -RTMIN+13 dwmblocks"
+  XF86AudioRaiseVolume
+
+"amixer -q sset Master 10%-; pkill -RTMIN+11 dwmblocks; pkill -RTMIN+12 dwmblocks; pkill -RTMIN+13 dwmblocks"
+  XF86AudioLowerVolume
+
+"amixer -q sset Master toggle; pkill -RTMIN+11 dwmblocks; pkill -RTMIN+12 dwmblocks; pkill -RTMIN+13 dwmblocks"
+  XF86AudioMute
+
+"amixer -q sset Capture toggle; pkill -RTMIN+10 dwmblocks"
+  XF86AudioMicMute

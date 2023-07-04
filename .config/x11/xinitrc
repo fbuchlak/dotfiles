@@ -14,13 +14,17 @@ runcmds () {
 	done >/dev/null 2>&1
 }
 
+# Keyboard
+setxkbmap -layout us,sk -option 'grp:win_space_toggle'
+xbindkeys -f ${XDG_CONFIG_HOME:-$HOME/.config}/xbindkeys/xbindkeysrc
 
+# Display
 xrandr --dpi 96
 xresources=${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources
 [[ -f ${xresources} ]] && xrdb -merge ${xresources}
 
-runcmds "setwallpaper dwmblocks dunst unclutter xcompmgr"
 runcmd "pulseaudio -d"
+runcmds "dunst setwallpaper xcompmgr unclutter dwmblocks"
 
 pidof -sx dwm > /dev/null || dwm
 
