@@ -17,6 +17,7 @@ export XRESOURCES=${XDG_CONFIG_HOME}/x11/xresources
 
 # shell
 export ALIASRC=${XDG_CONFIG_HOME}/shell/aliasrc
+export STARSHIP_CONFIG=${XDG_CONFIG_HOME}/shell/starship/starship.toml
 
 # zsh
 export ZDOTDIR=${XDG_CONFIG_HOME}/zsh

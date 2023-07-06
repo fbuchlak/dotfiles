@@ -2,10 +2,10 @@
 
 unalias -a
 
-alias sudo="sudo " # allow alias for sudo
-
 # dotfiles
-[ -d "$HOME/.dotgit" ] && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME' && alias d="dotgit "
+[ -d "$HOME/.dotgit" ] \
+    && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME' \
+    && alias d="dotgit "
 
 # use colors
 alias cal="cal -m --color=always"
@@ -28,31 +28,49 @@ alias hg="history 1 -1 | rg"
 alias ll="ls -alF --group-directories-first"
 alias mkd="mkdir -pv"
 
-# shortcuts
-alias z="zathura"
-
 # lynx
 [ -d ${XDG_CONFIG_HOME}/lynx ] && \
     alias lynx="lynx -cfg=${XDG_CONFIG_HOME}/lynx/lynx.cfg -lss=${XDG_CONFIG_HOME}/lynx/lynx.lss"
-alias "?"="search-with-lynx "
-alias "?b"="search-with-lynx bind "
-alias "?d"="search-with-lynx duck "
-alias "?g"="search-with-lynx google "
+
+if command -v search-with-lynx &> /dev/null ; then
+    alias "?"="search-with-lynx "
+    alias "?b"="search-with-lynx bind "
+    alias "?d"="search-with-lynx duck "
+    alias "?g"="search-with-lynx google "
+fi
 
 # editor
-[ -x "$(command -v ed)" ] && alias ed="vi"
-[ -x "$(command -v vim)" ] && alias vi="vim"
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+command -v vim &> /dev/null && alias vi="vim"
+command -v nvim &> /dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-if [ -v EDITOR ]; then
+# shortcuts
+alias z="zathura"
+if [ -v EDITOR ] ; then
 	alias v=$EDITOR
 	alias e=$EDITOR
 fi
 
-# sudo
-for cmd in emaint emerge eselect mount umount poweroff reboot shutdown showkey su ; do
-	alias $cmd="sudo $cmd "
-done; unset cmd;
+if command -v sudo &> /dev/null ; then
+    alias sudo="sudo "
 
-alias emerge="sudo emerge --ask"
+    wsudo () {
+        if command -v $1 &> /dev/null ; then
+            alias $1="sudo $1 "
+        fi
+    }
+
+    # always execute commands with sudo
+    for cmd in mount umount poweroff reboot shutdown showkey su ; do
+        wsudo $cmd
+    done; unset cmd
+
+    #--- Gentoo
+    if command -v emerge &> /dev/null ; then
+        alias emerge="sudo emerge --ask "
+    fi
+    for cmd in emaint eselect ; do
+        wsudo $cmd
+    done; unset cmd
+fi
+
 

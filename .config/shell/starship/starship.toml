@@ -1,0 +1,43 @@
+add_newline = false
+format = """
+[╭╼ $username$hostname ╾╼ $directory$git_branch$git_state$git_status](blue)
+[╰╼ ](blue)
+"""
+right_format = """
+[$cmd_duration](blue)
+"""
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+disabled = false
+format = '@[$hostname](bold red)'
+ssh_only = true
+
+[directory]
+read_only = " 󰉐 "
+truncate_to_repo = true
+style = "bold italic yellow"
+
+[cmd_duration]
+format = '$duration'
+disabled = false
+min_time = 1
+show_milliseconds = true
+
+[git_status]
+format = '([$all_status$ahead_behind](bold blue))'
+stashed = "[ 󰸕 $count](lightgreen)"
+modified = "[ 󰃄$count](blue)"
+deleted = "[ 󰧍$count](red)"
+conflicted = "[ 󱍺$count](red)"
+ahead = " [ ⇡$count](green)"
+behind = " [ ⇣$count](red)"
+untracked = "[ 󰼇$count](red)"
+staged = "[ 󱍻$count](green)"
+

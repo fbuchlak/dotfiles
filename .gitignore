@@ -1,1 +1,8 @@
+.Xauthority
+.cache
 .dotgit
+.gnupg
+.ssh
+.local/state
+.local/share/history
+.local/share/nvim
