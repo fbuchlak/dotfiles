@@ -32,5 +32,3 @@ vim.o.ignorecase = true
 vim.o.undofile = true
 
 vim.o.updatetime = 50
-
--- vim.o.spell = true

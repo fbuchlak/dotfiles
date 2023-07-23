@@ -1,8 +1,11 @@
 return {
-    "tpope/vim-surround",
-    "tpope/vim-repeat",
-    "tpope/vim-abolish",
+    "christoomey/vim-tmux-navigator",
     "mbbill/undotree",
     { "numToStr/Comment.nvim", opts = {} },
-    { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, opts = {} },
+    "nvim-lua/plenary.nvim",
+    "tpope/vim-abolish",
+    "tpope/vim-eunuch",
+    "tpope/vim-repeat",
+    "tpope/vim-sleuth",
+    "tpope/vim-surround",
 }
