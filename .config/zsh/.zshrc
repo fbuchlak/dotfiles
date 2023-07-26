@@ -59,13 +59,23 @@ bindkey -M isearch '^N' history-incremental-search-forward
 # Zsh plugins                                                                  #
 ################################################################################
 zsh_plugins_path="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins";
+#
+# zsh-syntax-completions
+if [ -f "$zsh_plugins_path/zsh-syntax-completions/zsh-syntax-completions.zsh" ] ; then
+    source "$zsh_plugins_path/zsh-syntax-highlighting/zsh-syntax-completions.zsh"
+fi
+
+# zsh-autosuggestions
 if [ -f "$zsh_plugins_path/zsh-autosuggestions/zsh-autosuggestions.zsh" ] ; then
-    # zsh-autosuggestions
     source "$zsh_plugins_path/zsh-autosuggestions/zsh-autosuggestions.zsh"
     bindkey '^ ' autosuggest-accept
+fi
 
-    # zsh-syntax-highlighting
+# zsh-syntax-highlighting
+if [ -f "$zsh_plugins_path/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] ; then
     source "$zsh_plugins_path/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi ; unset zsh_plugins_path
+fi
+
+unset zsh_plugins_path
 
 eval "$(starship init zsh)"

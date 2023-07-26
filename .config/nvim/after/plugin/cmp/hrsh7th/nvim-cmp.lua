@@ -49,10 +49,14 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "luasnip" },
     }, {
-        { name = "tmux" },
-    }, {
         { name = "buffer" },
         { name = "async_path" },
+    }, {
+        { name = "tmux" },
+        { name = "rg" },
+    }, {
+        { name = "npm", keyword_length = 4 },
+        { name = "crates" },
     }, {
         { name = "emoji" },
         { name = "nerdfont" },

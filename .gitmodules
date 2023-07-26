@@ -35,3 +35,9 @@
 [submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".config/zsh/plugins/zsh-completions"]
+	path = .config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule ".local/bin/xdg-ninja"]
+	path = .local/bin/xdg-ninja
+	url = https://github.com/b3nj5m1n/xdg-ninja

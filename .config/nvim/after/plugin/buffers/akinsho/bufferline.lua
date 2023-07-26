@@ -29,3 +29,10 @@ require("bufferline").setup({
         },
     },
 })
+
+require("which-key").register({
+    ["<F7>"] = { "<CMD>BufferLineMovePrev<CR>", "Buff Move Prev" },
+    ["<F8>"] = { "<CMD>BufferLineMoveNext<CR>", "Buff Move Next" },
+    H = { "<CMD>BufferLineCyclePrev<CR>", "Buff Cycle Prev" },
+    L = { "<CMD>BufferLineCycleNext<CR>", "Buff Cycle Next" },
+})

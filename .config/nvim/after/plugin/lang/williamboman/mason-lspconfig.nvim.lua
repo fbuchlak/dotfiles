@@ -11,11 +11,12 @@ local on_attach = function(_, buffer)
     local wk = require("which-key")
 
     wk.register({
-        r = { l.rename, "LSP Rename" },
         a = { l.code_action, "LSP Code Action" },
-        d = { l.definition, "LSP Definiton" },
         D = { l.declaration, "LSP Declaration" },
+        d = { l.definition, "LSP Definiton" },
         I = { l.implementation, "LSP Implementation" },
+        r = { l.references, "LSP References" },
+        R = { l.rename, "LSP Rename" },
     }, { prefix = "g", buffer = buffer })
 
     wk.register({
@@ -24,7 +25,7 @@ local on_attach = function(_, buffer)
 
     wk.register({
         K = { l.hover, "LSP Hover" },
-    })
+    }, { buffer = buffer })
 
     wk.register({
         f = {

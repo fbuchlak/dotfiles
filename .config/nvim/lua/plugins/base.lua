@@ -8,4 +8,9 @@ return {
     "tpope/vim-repeat",
     "tpope/vim-sleuth",
     "tpope/vim-surround",
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {},
+    },
 }

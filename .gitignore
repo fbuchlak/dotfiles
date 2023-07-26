@@ -6,3 +6,4 @@
 .local/state
 .local/share/history
 .local/share/nvim
+intelephense

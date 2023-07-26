@@ -1,0 +1,2 @@
+www-client/librewolf
+net-im/discord

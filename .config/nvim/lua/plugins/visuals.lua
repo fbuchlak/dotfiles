@@ -27,6 +27,7 @@ return {
         },
     },
     {
+
         "lukas-reineke/indent-blankline.nvim",
         opts = {
             char = "┊",
@@ -44,4 +45,5 @@ return {
         },
     },
     "nvim-tree/nvim-web-devicons",
+    "RRethy/vim-illuminate",
 }
