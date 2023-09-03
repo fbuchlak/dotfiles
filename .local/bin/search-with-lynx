@@ -11,4 +11,4 @@ esac
 
 QUERY=$(jq -rn --arg x "$*" '$x|@uri')
 
-$CMD $URL$QUERY
+$CMD "$URL$QUERY"

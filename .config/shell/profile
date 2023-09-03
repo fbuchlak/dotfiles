@@ -25,6 +25,9 @@ export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 export ZSHRC=${ZDOTDIR}/.zshrc
 export HISTFILE=${XDG_DATA_HOME}/history
 
+# docker
+export DOCKER_CONFIG=${XDG_CONFIG_HOME}/docker
+
 # npm
 export NPM_CONFIG_USERCONFIG=${XDG_CONFIG_HOME}/npm/npmrc
 export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm

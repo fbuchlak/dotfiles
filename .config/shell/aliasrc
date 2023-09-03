@@ -2,10 +2,18 @@
 
 unalias -a
 
+# git
+alias gst="git status"
+
 # dotfiles
 [ -d "$HOME/.dotgit" ] \
     && alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit/ --work-tree=$HOME' \
     && alias d="dotgit "
+
+if command -v lazygit &> /dev/null ; then
+    alias "dotgit-lazy"="lazygit --git-dir=$HOME/.dotgit/ --work-tree=$HOME"
+    alias "dlazy"="dotgit-lazy"
+fi
 
 # use colors
 alias cal="cal -m --color=always"
@@ -32,6 +40,11 @@ alias mkd="mkdir -pv"
 [ -d ${XDG_CONFIG_HOME}/lynx ] && \
     alias lynx="lynx -cfg=${XDG_CONFIG_HOME}/lynx/lynx.cfg -lss=${XDG_CONFIG_HOME}/lynx/lynx.lss"
 
+# armcord/discord
+[ -f ${HOME}/.submodules/armcord/dist/linux-unpacked/armcord ] && \
+    alias armcord="${HOME}/.submodules/armcord/dist/linux-unpacked/armcord"
+alias discord="armcord"
+
 if command -v search-with-lynx &> /dev/null ; then
     alias "?"="search-with-lynx "
     alias "?b"="search-with-lynx bind "
@@ -46,8 +59,8 @@ command -v nvim &> /dev/null && alias vim="nvim" vimdiff="nvim -d"
 # shortcuts
 alias z="zathura"
 if [ -v EDITOR ] ; then
-	alias v=$EDITOR
-	alias e=$EDITOR
+    alias v=$EDITOR
+    alias e=$EDITOR
 fi
 
 if command -v sudo &> /dev/null ; then
@@ -72,4 +85,3 @@ if command -v sudo &> /dev/null ; then
         wsudo $cmd
     done; unset cmd
 fi
-

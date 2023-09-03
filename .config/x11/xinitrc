@@ -1,17 +1,17 @@
 #!/bin/sh
 
 runcmd () {
-	cmd=$(echo $1 | awk '{print $1;}')
-	if command -v $cmd &> /dev/null; then
-		killall $cmd &> /dev/null
-		eval "$1" &> /dev/null &
-	fi
+    cmd=$(echo $1 | awk '{print $1;}')
+    if command -v $cmd &> /dev/null; then
+        killall $cmd &> /dev/null
+        eval "$1" &> /dev/null &
+    fi
 }
 
 runcmds () {
-	for cmd in $1; do
-		runcmd $cmd
-	done >/dev/null 2>&1
+    for cmd in $1; do
+        runcmd $cmd
+    done >/dev/null 2>&1
 }
 
 # Keyboard
@@ -21,10 +21,9 @@ xbindkeys -f ${XDG_CONFIG_HOME:-$HOME/.config}/xbindkeys/xbindkeysrc
 # Display
 xrandr --dpi 96
 xresources=${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources
-[[ -f $xresources ]] && xrdb -merge $xresources
+[ -f $xresources ] && xrdb -merge "$xresources"
 
-runcmd "pulseaudio -d"
+runcmd "pulseaudio --daemonize"
 runcmds "dunst setwallpaper xcompmgr unclutter dwmblocks"
 
 pidof -sx dwm > /dev/null || dwm
-

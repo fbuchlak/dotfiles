@@ -51,8 +51,8 @@
 *cursorColor: c07
 *borderColor: c08
 
-*.alpha: .6
-*.font: JetBrainsMono\ Nerd\ Font:size=16
+*.alpha: .8
+*.font: JetBrainsMono\ Nerd\ Font:size=14
 
 dwm.bgColor: cBG
 dwm.boColor: cBG

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-$XDG_DATA_HOME/screenlayout || true
+"$XDG_DATA_HOME/screenlayout" || true
 setwallpaper || true
