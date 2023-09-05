@@ -85,3 +85,6 @@ if command -v sudo &> /dev/null ; then
         wsudo $cmd
     done; unset cmd
 fi
+
+# mess
+alias symfony="symfony-cli"
