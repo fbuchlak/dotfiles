@@ -89,6 +89,11 @@ return {
                 find_files = { theme = "dropdown" },
                 frecency = { theme = "dropdown" },
             },
+            defaults = {
+                preview = {
+                    filesize_limit = 1,
+                },
+            },
         },
         config = function(_, opts)
             util.create_autocmd("User", "telescope_preview_numbers", {

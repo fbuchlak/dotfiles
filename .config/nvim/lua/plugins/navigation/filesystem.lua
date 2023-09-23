@@ -45,7 +45,7 @@ return {
                 go_in_plus = "l",
             },
             windows = {
-                preview = true,
+                preview = false,
                 width_focus = 35,
                 width_no_focus = 10,
                 width_preview = 70,

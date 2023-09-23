@@ -1,3 +1,5 @@
+local util = require("util")
+
 return {
     "tpope/vim-sleuth",
     {
@@ -27,8 +29,7 @@ return {
                     tc.jump_prev
                 )
 
-            require("util")
-                .map("n", "<Leader>jt", todo_next, { desc = "[Jump Next] Todo" })
+            util.map("n", "<Leader>jt", todo_next, { desc = "[Jump Next] Todo" })
                 .map("n", "<Leader>kt", todo_prev, { desc = "[Jump Prev] Todo" })
 
             tc.setup(opts)
@@ -53,14 +54,6 @@ return {
     },
     { "numToStr/Comment.nvim", opts = {} },
     {
-        "brenoprata10/nvim-highlight-colors",
-        config = function(_, opts)
-            local hl = require("nvim-highlight-colors")
-            require("util").map("n", "<LocalLeader>mC", hl.toggle, { desc = "Toggle Highlight Colors" })
-            hl.setup(opts)
-        end,
-    },
-    {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         opts = {},
@@ -80,7 +73,6 @@ return {
                 "Trouble",
                 "lazy",
                 "mason",
-                "notify",
             },
         },
     },

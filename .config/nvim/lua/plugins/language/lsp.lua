@@ -7,7 +7,6 @@ return {
         dependencies = {
             { "folke/neoconf.nvim", cmd = "Neoconf", config = false },
             { "folke/neodev.nvim", opts = {} },
-            { "kosayoda/nvim-lightbulb", opts = { autocmd = { enabled = true } } },
             "williamboman/mason-lspconfig.nvim",
         },
         opts = { ensure_installed = {} },
@@ -24,7 +23,12 @@ return {
                 .map("n", "<Leader>li", "<CMD>LspInfo<CR>", { desc = "[LSP] Info" })
                 .map("n", "<Leader>lwa", vim.lsp.buf.add_workspace_folder, { desc = "[LSP][Workspace] Add Folder" })
                 .map("n", "<Leader>lwr", vim.lsp.buf.remove_workspace_folder, { desc = "[LSP][Workspace] Remove Folder" })
-                .map("n", "<Leader>lwl", vim.lsp.buf.list_workspace_folders, { desc = "[LSP][Workspace] List Folders" })
+                .map("n", "<Leader>lwl", function()
+                    print("LSP Workspace folders:")
+                    for index, value in ipairs(vim.lsp.buf.list_workspace_folders()) do
+                        print(index, value)
+                    end
+                end, { desc = "[LSP][Workspace] List Folders" })
                 .map({ "n", "v" }, "<LocalLeader>ff", lsp_util.format, { desc = "Format" })
                 .map({ "n", "v" }, "<LocalLeader>fw", function()
                     lsp_util.format()
@@ -110,7 +114,8 @@ return {
         event = "LspAttach",
         opts = {
             text = { spinner = "clock" },
-            window = { blend = 0 },
+            window = { blend = 0, border = defaults.border },
+            fmt = { stack_upwards = false },
         },
     },
     {

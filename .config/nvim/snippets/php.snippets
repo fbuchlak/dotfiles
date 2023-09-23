@@ -1,0 +1,55 @@
+snippet ps "php file start"
+	<?php
+
+	declare(strict_types=1);
+	${0}
+
+snippet dst "declare strict_types"
+	declare(strict_types=1);
+	${0}
+
+snippet c "comment"
+	// $0
+
+snippet d "docblock"
+	/**
+	 * $0
+	 */
+
+snippet mt "measure time"
+	\$time_start = microtime(true); 
+	$0
+	echo 'Execution time : ' . (microtime(true) - \$time_start);
+
+snippet dv "docblock var"
+	/** @var ${1:Type} $${2:var}$0 */
+
+snippet t "$this"
+	$$this${1}
+
+snippet tt "$this"
+	$$this->${1}
+
+snippet xs "new array"
+	$${1:xs} = [
+		'${2:key}' => ${3},
+	];
+
+snippet r "return ;"
+	return ${1};
+
+snippet rett "return true;"
+	return true;${0}
+
+snippet retf "return false;"
+	return false;${0}
+
+snippet retj "return json"
+	return $$this->json([
+		'${1}' => ${2},
+	]);
+
+snippet retv "return view"
+	return $$this->render('${1}', [
+		'${2:key}' => ${3},
+	]);

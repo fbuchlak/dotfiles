@@ -5,6 +5,25 @@ return {
     { "tpope/vim-abolish", event = "VeryLazy" },
     { "tpope/vim-repeat", event = "VeryLazy" },
     {
+        "LunarVim/bigfile.nvim",
+        opts = {
+            filesize = 1,
+            features = {
+                "indent_blankline",
+                "illuminate",
+                "lsp",
+                "treesitter",
+                "syntax",
+                "matchparen",
+                "vimopts",
+                "filetype",
+            },
+        },
+        config = function(_, opts)
+            require("bigfile").setup(opts)
+        end,
+    },
+    {
         "echasnovski/mini.surround",
         version = "*",
         keys = {
@@ -47,7 +66,6 @@ return {
             auto_session_use_git_branch = true,
         },
     },
-    { "rest-nvim/rest.nvim", opts = {} },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",

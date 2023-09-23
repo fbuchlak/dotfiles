@@ -45,7 +45,9 @@ return {
             ensure_installed = {},
             context_commentstring = { enable = true },
             auto_install = false,
-            highlight = { enable = true },
+            highlight = {
+                enable = true,
+            },
             indent = { enable = true },
             incremental_selection = {
                 enable = true,

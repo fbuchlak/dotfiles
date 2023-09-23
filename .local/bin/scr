@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TARGET_DIRECTORY=${XDG_PICTURES_DIR:-"$HOME/Pictures"}/Screenshots
+mkdir -p "$TARGET_DIRECTORY"
+scrot -s "$TARGET_DIRECTORY/%Y-%m-%d-%H:%M:%S.png" 

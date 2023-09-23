@@ -1,5 +1,9 @@
 local defaults = require("config.defaults")
 
+local enabled = function()
+    return vim.bo.buftype ~= "prompt" and vim.b.cmp_enabled ~= false
+end
+
 return {
     { "onsails/lspkind.nvim", lazy = true },
     {
@@ -24,10 +28,17 @@ return {
         },
         opts = function()
             local cmp = require("cmp")
+            local lspCompletionItemKind = require("cmp.types").lsp.CompletionItemKind
             local window_defaults = cmp.config.window.bordered({ border = defaults.border })
 
             local cmp_sources = {
-                { name = "nvim_lsp" },
+                {
+                    name = "nvim_lsp",
+                    entry_filter = function(entry)
+                        return entry:get_kind() ~= lspCompletionItemKind.Snippet
+                            and entry.source:get_debug_name() ~= "nvim_lsp:emmet_ls"
+                    end,
+                },
                 { name = "nvim_lsp_signature_help" },
                 { name = "luasnip" },
                 { name = "buffer" },
@@ -55,6 +66,7 @@ return {
             end
 
             return {
+                enabled = enabled,
                 snippet = {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
@@ -94,6 +106,7 @@ return {
             cmp.setup(opts)
 
             local search_opts = {
+                enabled = enabled,
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
                     { name = "buffer" },
@@ -102,6 +115,7 @@ return {
             cmp.setup.cmdline({ "/", "?" }, search_opts)
 
             local cmd_opts = {
+                enabled = enabled,
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
                     { name = "async_path" },
@@ -111,4 +125,7 @@ return {
             cmp.setup.cmdline(":", cmd_opts)
         end,
     },
+    require("util").plugin_disable_for_bigfile("hrsh7th/nvim-cmp", function()
+        vim.b.cmp_enabled = false
+    end),
 }

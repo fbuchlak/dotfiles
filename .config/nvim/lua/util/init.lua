@@ -50,4 +50,15 @@ function M.get_visual_selection()
     return #text > 0 and text or ""
 end
 
+function M.plugin_disable_for_bigfile(name, disable)
+    return {
+        "LunarVim/bigfile.nvim",
+        opts = function(_, opts)
+            if type(opts.features) == "table" then
+                table.insert(opts.features, { name = name, disable = disable })
+            end
+        end,
+    }
+end
+
 return M

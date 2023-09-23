@@ -41,7 +41,6 @@ return {
             on_attach = function(client)
                 client.server_capabilities.callHierarchyProvider = false
                 client.server_capabilities.completionProvider = false
-                client.server_capabilities.declarationProvider = false
                 client.server_capabilities.definitionProvider = false
                 client.server_capabilities.documentHighlightProvider = false
                 client.server_capabilities.documentSymbolProvider = false
@@ -79,7 +78,7 @@ return {
                         -- https://cs.symfony.com/doc/ruleSets/Symfony.html
                         table.insert(
                             args,
-                            "--rules=@Symfony,array_indentation,protected_to_private,-no_superfluous_phpdoc_tags"
+                            "--rules=@Symfony,array_indentation,protected_to_private,phpdoc_annotation_without_dot,-no_superfluous_phpdoc_tags"
                         )
                     end
 
@@ -97,4 +96,7 @@ return {
             }),
         })
     end),
+    -- snippets
+    "h4kst3r/php-awesome-snippets", -- vscode extension
+    "nalabdou/symfony-code-snippets", -- vscode extension
 }

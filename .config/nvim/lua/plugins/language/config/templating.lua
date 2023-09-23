@@ -5,6 +5,7 @@ local djlint_opts = {
         "django",
         "htmldjango",
         "jinja.html",
+        "mustache",
         "ninja",
         "twig",
     },
@@ -23,4 +24,6 @@ return {
             nls.builtins.diagnostics.djlint.with(djlint_opts),
         })
     end),
+    -- snippets
+    "nalabdou/twig-code-snippets", -- vscode extension
 }

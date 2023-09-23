@@ -23,6 +23,20 @@ return {
     util.register_lsp_servers({
         cssls = {},
         emmet_ls = {
+            on_attach = function(client, buffer)
+                require("util").map("i", "<C-e>", function()
+                    client.request("textDocument/completion", vim.lsp.util.make_position_params(), function(_, result)
+                        if result[1] then
+                            local textEdit = result[1].textEdit
+                            local snip_string = textEdit.newText
+
+                            textEdit.newText = ""
+                            vim.lsp.util.apply_text_edits({ textEdit }, buffer, client.offset_encoding)
+                            require("luasnip").lsp_expand(snip_string)
+                        end
+                    end, buffer)
+                end, { buffer = buffer, silent = true })
+            end,
             filetypes = {
                 "css",
                 "eruby",
