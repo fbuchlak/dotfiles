@@ -35,6 +35,8 @@ alias top="htop"
 alias hg="history 1 -1 | rg"
 alias ll="ls -alF --group-directories-first"
 alias mkd="mkdir -pv"
+alias mnote='mkd "$HOME/notes" && nvim "$HOME/notes/$(date +%F)"'
+alias mnote-now='mkd "$HOME/notes" && nvim "$HOME/notes/$(date +%F_%T)"'
 
 # lynx
 [ -d ${XDG_CONFIG_HOME}/lynx ] && \
