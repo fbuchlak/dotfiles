@@ -46,9 +46,9 @@ return {
             },
             windows = {
                 preview = true,
-                width_focus = 35,
+                width_focus = 50,
                 width_no_focus = 10,
-                width_preview = 70,
+                width_preview = 75,
             },
         },
         config = function(_, opts)

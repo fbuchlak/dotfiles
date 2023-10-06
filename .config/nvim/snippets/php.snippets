@@ -4,6 +4,42 @@ snippet ps "php file start"
 	declare(strict_types=1);
 	${0}
 
+snippet fclass "file class"
+	<?php
+
+	declare(strict_types=1);
+
+	namespace JJ
+
+	class JJ
+	{
+	    ${0}
+	}
+
+snippet finterface "file interface"
+	<?php
+
+	declare(strict_types=1);
+
+	namespace JJ;
+
+	interface JJ
+	{
+	    ${0}
+	}
+
+snippet fenum "file enum"
+	<?php
+
+	declare(strict_types=1);
+
+	namespace JJ;
+
+	enum JJ
+	{
+	    ${0}
+	}
+
 snippet dst "declare strict_types"
 	declare(strict_types=1);
 	${0}
@@ -16,13 +52,35 @@ snippet d "docblock"
 	 * $0
 	 */
 
-snippet mt "measure time"
-	\$time_start = microtime(true); 
-	$0
-	echo 'Execution time : ' . (microtime(true) - \$time_start);
+snippet dp "docblock param"
+	/**
+	 * @param $0
+	 */
+
+snippet dpr "docblock param return"
+	/**
+	 * @param $0
+	 *
+	 * @return
+	 */
+
+snippet dr "docblock return"
+	/**
+	 * @return $0
+	 */
 
 snippet dv "docblock var"
 	/** @var ${1:Type} $${2:var}$0 */
+
+snippet mt "measure time"
+	\$timeStart = microtime(true);
+	$0
+	sprintf('Execution time: %Fs', microtime(true) - \$timeStart);
+
+snippet mtd "measure time dump"
+	\$timeStart = microtime(true);
+	$0
+	dump(sprintf('Execution time: %Fs', microtime(true) - \$timeStart));
 
 snippet t "$this"
 	$$this${1}
