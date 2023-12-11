@@ -43,6 +43,7 @@ export GOMODCACHE=$XDG_CACHE_HOME/go/mod
 export GOPATH=${XDG_DATA_HOME}/go
 export RUSTUP_HOME=${XDG_DATA_HOME}/rustup
 export WGETRC=${XDG_CONFIG_HOME}/wget/wgetrc
+export MYSQL_HISTFILE=${XDG_CONFIG_HOME}/mysql_history
 
 # ruby bundler
 export BUNDLE_USER_CONFIG=${XDG_CONFIG_HOME}/bundle

@@ -11,6 +11,7 @@ alias gst="git status"
     && alias d="dotgit "
 
 if command -v lazygit &> /dev/null ; then
+    alias "lg"="lazygit"
     alias "dotgit-lazy"="lazygit --git-dir=$HOME/.dotgit/ --work-tree=$HOME"
     alias "dlazy"="dotgit-lazy"
 fi
