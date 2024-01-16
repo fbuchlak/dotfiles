@@ -47,6 +47,9 @@ alias mnote-now='mkd "$HOME/notes" && nvim "$HOME/notes/$(date +%F_%T)"'
 [ -f ${HOME}/.submodules/armcord/dist/linux-unpacked/armcord ] && \
     alias armcord="${HOME}/.submodules/armcord/dist/linux-unpacked/armcord"
 alias discord="armcord"
+if command -v armcord > /dev/null && pidof -sx dbus-daemon > /dev/null ; then
+    alias armcord="DBUS_SESSION_BUS_ADDRESS=\"autolaunch:\" ${HOME}/.submodules/armcord/dist/linux-unpacked/armcord"
+fi
 
 if command -v search-with-lynx &> /dev/null ; then
     alias "?"="search-with-lynx "
