@@ -1,0 +1,53 @@
+let mapleader=" "
+let maplocalleader="\\"
+
+nnoremap <leader>y  "+y
+nnoremap <leader>Y  "+Y
+
+if empty("$XDG_CACHE_HOME")
+	let $XDG_CACHE_HOME="$HOME/.cache"
+endif
+
+if empty("$XDG_CONFIG_HOME")
+	let $XDG_CONFIG_HOME="$HOME/.config"
+endif
+
+if empty("$XDG_DATA_HOME")
+	let $XDG_DATA_HOME="$HOME/.local/share"
+endif
+
+if empty("$XDG_STATE_HOME")
+	let $XDG_DATA_HOME="$HOME/.local/state"
+endif
+
+set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
+set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+set viminfofile+=$XDG_CACHE_HOME/vim/viminfo
+set rtp+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+
+set nocompatible
+set showmode
+set showcmd
+
+set number
+set relativenumber
+
+filetype plugin indent on
+syntax on
+
+set autoindent
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+set backspace=indent,eol,start
+set hidden
+set laststatus=2
+
+set incsearch
+set nohlsearch
+set smartcase
+
+colorscheme habamax
