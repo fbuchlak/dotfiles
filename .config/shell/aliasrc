@@ -62,13 +62,6 @@ fi
 command -v vim &> /dev/null && alias vi="vim"
 command -v nvim &> /dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-# shortcuts
-alias z="zathura"
-if [ -v EDITOR ] ; then
-    alias v=$EDITOR
-    alias e=$EDITOR
-fi
-
 if command -v sudo &> /dev/null ; then
     alias sudo="sudo "
 
