@@ -56,6 +56,15 @@ export TMUX_TMPDIR=${XDG_RUNTIME_DIR}/tmux
 # dwm fix
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# bun
+export BUN_INSTALL=${XDG_STATE_HOME}/bun
+
+# pnpm
+export PNPM_HOME=${XDG_DATA_HOME}/pnpm
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 # path
 PATH="$PATH:$HOME/.local/bin"
@@ -64,5 +73,6 @@ PATH="$PATH:$HOME/.local/bin/statusbar-blocks/bin"
 PATH="$PATH:$CARGO_HOME/bin"
 PATH="$PATH:$COMPOSER_PATH/vendor/bin"
 PATH="$PATH:$GOPATH/bin"
+PATH="$PATH:$BUN_INSTALL/bin"
 
 export PATH
