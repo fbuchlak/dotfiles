@@ -34,17 +34,48 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-zle -N select-quoted
-for m in visual viopp; do
-    for c in {a,i}{\',\",\`}; do
-        bindkey -M $m $c select-quoted
-    done
-done ; unset m c
+function vi-yank-xclip {
+    zle vi-yank
+   echo -n "$CUTBUFFER" | xclip  -selection clipboard
+}
+zle -N vi-yank-xclip
 
+bindkey -M vicmd "y" vi-yank-xclip
 bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M isearch '^P' history-incremental-search-backward
 bindkey -M isearch '^N' history-incremental-search-forward
+
+# ci"
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M "$m" "$c" select-quoted
+  done
+done
+
+# ci{, ci(
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}"${(s..)^:-'()[]{}<>bB'}"; do
+    bindkey -M "$m" "$c" select-bracketed
+  done
+done
+
+################################################################################
+# Other keybindings                                                            #
+################################################################################
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
+bindkey '^R' history-incremental-search-backward
+
+bindkey -s '^F' '^u cd "$(dirname "$(FZF_DEFAULT_COMMAND="fd -t f --min-depth 1" fzf)")"; clear; echo "pwd:\\n\\033[0;31m$(pwd)\\033[0m"\n'
+bindkey -s '^G' '^u cd "$(FZF_DEFAULT_COMMAND="fd -H --exclude .dotgit --exclude .cache --exclude .local/state -t d --min-depth 1 --max-depth=2" fzf)"; clear; echo "pwd:\\n\\033[0;31m$(pwd)\\033[0m"\n'
+bindkey -s '^O' '^u cd ..\n'
 
 ################################################################################
 # Aliases and configuration                                                    #
