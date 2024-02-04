@@ -44,3 +44,6 @@
 [submodule ".submodules/armcord"]
 	path = .submodules/armcord
 	url = https://github.com/ArmCord/ArmCord
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/fbuchlak/SimpleNvim
