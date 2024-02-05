@@ -3,9 +3,10 @@ stty stop undef
 stty lnext undef
 
 setopt autocd globdots interactive_comments
-autoload -U colors compinit && colors && compinit
+autoload -U colors compinit; colors
 zstyle ':completion:*' menu select
 zmodload zsh/complist
+compinit
 
 ################################################################################
 # History settings                                                             #
@@ -91,9 +92,9 @@ bindkey -s '^O' '^u cd ..\n'
 ################################################################################
 zsh_plugins_path="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins";
 #
-# zsh-syntax-completions
-if [ -f "$zsh_plugins_path/zsh-syntax-completions/zsh-syntax-completions.zsh" ] ; then
-    source "$zsh_plugins_path/zsh-syntax-highlighting/zsh-syntax-completions.zsh"
+# zsh-completions
+if [ -f "$zsh_plugins_path/zsh-completions/zsh-completions.plugin.zsh" ] ; then
+    source "$zsh_plugins_path/zsh-completions/zsh-completions.plugin.zsh"
 fi
 
 # zsh-autosuggestions
