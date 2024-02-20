@@ -15,6 +15,7 @@ runcmds () {
 }
 
 # Keyboard
+xset r rate 400 75
 setxkbmap -layout us,sk -option 'grp:win_space_toggle'
 xbindkeys -f ${XDG_CONFIG_HOME:-$HOME/.config}/xbindkeys/xbindkeysrc
 
