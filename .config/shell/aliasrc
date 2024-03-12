@@ -4,6 +4,7 @@ unalias -a
 
 # git
 alias gst="git status"
+alias gpl="git pull"
 
 # dotfiles
 [ -d "$HOME/.dotgit" ] \
