@@ -44,6 +44,8 @@ export GOPATH=${XDG_DATA_HOME}/go
 export RUSTUP_HOME=${XDG_DATA_HOME}/rustup
 export WGETRC=${XDG_CONFIG_HOME}/wget/wgetrc
 export MYSQL_HISTFILE=${XDG_CONFIG_HOME}/mysql_history
+export PARALLEL_HOME=${XDG_CONFIG_HOME}/parallel
+export SONARLINT_USER_HOME=${XDG_DATA_HOME}/sonarlint
 
 # ruby bundler
 export BUNDLE_USER_CONFIG=${XDG_CONFIG_HOME}/bundle
@@ -55,6 +57,7 @@ export TMUX_TMPDIR=${XDG_RUNTIME_DIR}/tmux
 
 # dwm fix
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java
 
 # bun
 export BUN_INSTALL=${XDG_STATE_HOME}/bun

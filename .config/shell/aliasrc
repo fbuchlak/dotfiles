@@ -87,6 +87,7 @@ if command -v sudo &> /dev/null ; then
 fi
 
 # mess
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 if command -v symfony-cli &> /dev/null ; then
     alias symfony="symfony-cli"
 fi
