@@ -74,6 +74,7 @@ bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
 bindkey '^R' history-incremental-search-backward
 
+bindkey -s '^B' '^u tmux\n'
 bindkey -s '^F' '^u cd "$(dirname "$(FZF_DEFAULT_COMMAND="fd -t f --min-depth 1" fzf)")"; clear; echo "pwd:\\n\\033[0;31m$(pwd)\\033[0m"\n'
 bindkey -s '^G' '^u cd "$(FZF_DEFAULT_COMMAND="fd -H --exclude .dotgit --exclude .cache --exclude .local/state -t d --min-depth 1 --max-depth=2" fzf)"; clear; echo "pwd:\\n\\033[0;31m$(pwd)\\033[0m"\n'
 bindkey -s '^O' '^u cd ..\n'

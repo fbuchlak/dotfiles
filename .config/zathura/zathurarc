@@ -22,6 +22,8 @@ map [presentation] j navigate next
 map [presentation] k navigate previous
 map [presentation] ; navigate next
 
+set selection-clipboard clipboard
+
 set completion-bg                  "#EED49F" # c03
 set completion-fg                  "#8AADF4" # c04
 set completion-highlight-bg        "#EED49F" # c03
