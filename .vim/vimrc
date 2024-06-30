@@ -3,6 +3,8 @@ let maplocalleader="\\"
 
 nnoremap <leader>y  "+y
 nnoremap <leader>Y  "+Y
+vnoremap <leader>y  "+y
+vnoremap <leader>Y  "+Y
 
 if empty("$XDG_CACHE_HOME")
 	let $XDG_CACHE_HOME="$HOME/.cache"

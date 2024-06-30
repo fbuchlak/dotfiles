@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 randomimg=$(
     find "$XDG_DATA_HOME/wallpapers/categories/$1" -type f |
